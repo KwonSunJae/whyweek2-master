@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main"
+
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/Btndetail"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="116dp"
+            android:layout_marginLeft="309dp"
+            android:background="#0000ff00"
+            >
+        </Button>
+
+
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_height="500dp"
+            android:layout_width="370dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="9dp"
+            android:id="@+id/barchart"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:text="탄수화물  단백질   지방     나트륨   칼로리"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/BtnHome"
+                android:layout_width="79dp"
+                android:layout_height="79dp"
+                android:background="#0000ff00"
+                android:textSize="30dp"
+                android:clickable="false"
+                android:layout_marginLeft="15dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/Btndideat"
+                android:layout_width="79dp"
+                android:layout_height="79dp"
+                android:background="#0000ff00"
+                android:textSize="30dp"
+                android:layout_marginLeft="5dp">
+
+            </Button>
+            <Button
+                android:id="@+id/Btnwilleat"
+                android:layout_width="79dp"
+                android:layout_height="79dp"
+                android:background="#0000ff00"
+                android:textSize="30dp"
+                android:layout_marginLeft="35dp">
+
+            </Button>
+            <Button
+                android:id="@+id/Btnprofile"
+                android:layout_width="79dp"
+                android:layout_height="79dp"
+                android:background="#0000ff00"
+                android:textSize="30dp"
+                android:layout_marginLeft="15dp">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="79dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

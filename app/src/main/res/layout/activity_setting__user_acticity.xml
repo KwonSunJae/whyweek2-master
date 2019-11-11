@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FactoringUserInformation.Setting_UserActicity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/register_profile"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <RadioGroup
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="120dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/RGSex">
+
+            <RadioButton
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:text="남자"
+                android:id="@+id/RbtnMale"
+                android:textColor="#707070"
+                android:textSize="25dp"
+                android:checked="true">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/Rbtnfemale"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:text="여자"
+                android:textColor="#707070"
+                android:textSize="25dp">
+
+            </RadioButton>
+        </RadioGroup>
+        <EditText
+            android:id="@+id/TVage"
+            android:layout_width="220dp"
+
+            android:layout_marginTop="14dp"
+            android:layout_height="60dp"
+
+            android:inputType="number"
+            android:textSize="25dp">
+
+        </EditText>
+        <RadioGroup
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/RGAct">
+
+            <RadioButton
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:text="적음"
+                android:textColor="#707070"
+                android:textSize="25dp"
+                android:id="@+id/BtnLess"
+                android:checked="true">
+
+            </RadioButton>
+
+            <RadioButton
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:text="보통"
+                android:id="@+id/BtnMid"
+            android:textColor="#707070"
+            android:textSize="25dp">
+
+        </RadioButton>
+            <RadioButton
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:text="많음"
+                android:id="@+id/BtnMore"
+                android:textColor="#707070"
+                android:textSize="25dp">
+
+            </RadioButton>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/TVHeight"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:inputType="number"
+            android:textSize="25dp">
+
+        </EditText>
+        <EditText
+            android:id="@+id/TVWeight"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:textSize="25dp">
+
+        </EditText>
+
+
+
+        <EditText
+            android:id="@+id/TVMotiveW"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:textSize="25dp">
+
+        </EditText>
+
+
+
+        <Button
+            android:id="@+id/BtnFinish"
+            android:layout_marginTop="70dp"
+            android:layout_width="320dp"
+            android:layout_height="80dp"
+            android:background="#0000ff00">
+
+        </Button>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

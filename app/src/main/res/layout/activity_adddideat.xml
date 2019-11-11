@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DideatListview.Adddideat">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="411dp"
+           android:layout_height="846dp"
+           android:background="@drawable/dideat_add"
+           android:orientation="vertical"
+           >
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+
+               <EditText
+                   android:id="@+id/ETHour"
+                   android:layout_width="70dp"
+
+                   android:layout_height="60dp"
+                   android:layout_marginLeft="90dp"
+                   android:layout_marginTop="160dp"
+                   android:inputType="number"
+                   android:textSize="25dp">
+
+               </EditText>
+
+               <EditText
+                   android:id="@+id/ETMin"
+                   android:layout_width="70dp"
+
+                   android:layout_height="60dp"
+                   android:layout_marginLeft="60dp"
+                   android:layout_marginTop="160dp"
+                   android:inputType="number"
+                   android:textSize="25dp">
+
+               </EditText>
+               <Button
+                   android:layout_width="60dp"
+                   android:layout_height="60dp"
+                   android:layout_marginTop="70dp"
+                   android:layout_marginLeft="30dp"
+                   android:background="#0000ff00"
+                   android:id="@+id/Btnclose"></Button>
+           </LinearLayout>
+
+           <EditText
+               android:id="@+id/ETfName"
+               android:layout_width="160dp"
+
+               android:layout_height="60dp"
+               android:layout_marginLeft="125dp"
+               android:layout_marginTop="14dp"
+
+               android:textSize="25dp">
+
+           </EditText>
+
+           <EditText
+               android:id="@+id/ETkCal"
+               android:layout_width="160dp"
+
+               android:layout_height="60dp"
+               android:layout_marginLeft="125dp"
+               android:layout_marginTop="12dp"
+               android:inputType="number"
+               android:textSize="25dp">
+
+           </EditText>
+
+           <EditText
+               android:id="@+id/ETTansu"
+               android:layout_width="140dp"
+
+               android:layout_height="60dp"
+               android:layout_marginLeft="145dp"
+               android:layout_marginTop="12dp"
+               android:inputType="number"
+               android:textSize="25dp">
+
+           </EditText>
+
+           <EditText
+               android:id="@+id/ETPro"
+               android:layout_width="140dp"
+               android:layout_height="60dp"
+               android:layout_marginLeft="145dp"
+               android:layout_marginTop="12dp"
+
+               android:inputType="number"
+               android:textSize="25dp">
+
+           </EditText>
+
+           <EditText
+               android:id="@+id/ETFat"
+               android:layout_width="140dp"
+               android:layout_height="60dp"
+               android:layout_marginLeft="145dp"
+               android:layout_marginTop="12dp"
+
+               android:inputType="number"
+               android:textSize="25dp">
+
+           </EditText>
+
+           <EditText
+               android:id="@+id/ETNa"
+               android:layout_width="140dp"
+               android:layout_height="60dp"
+               android:layout_marginLeft="145dp"
+               android:layout_marginTop="12dp"
+
+               android:inputType="number"
+               android:textSize="25dp">
+
+           </EditText>
+           <Button
+               android:layout_width="310dp"
+               android:layout_height="80dp"
+               android:id="@+id/Btnsubmit"
+               android:layout_marginLeft="50dp"
+               android:layout_marginTop="32dp"
+               android:background="#0000ff00"></Button>
+
+       </LinearLayout>
+   </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
