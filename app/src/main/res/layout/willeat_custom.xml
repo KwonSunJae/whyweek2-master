@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:background="#CCCCCC"
+        android:layout_height="120dp"
+        android:background="#F3F3F3"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_gravity="center"
@@ -17,52 +17,76 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
             android:id="@+id/imgViewFood"
+            android:src="@drawable/app_icon"
+
             >
 
         </ImageView>
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:text="이름이름이름"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:layout_gravity="center_vertical"
-            android:id="@+id/TVfName"></TextView>
         <LinearLayout
-            android:layout_width="160dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:text="이름"
+                android:textSize="20dp"
+                android:id="@+id/TVfName"
+                android:layout_gravity="center"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:text="kcal"
+                android:textSize="20dp"
+                android:id="@+id/wTVkcal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="Na: 276"
+                android:id="@+id/wTVNat"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="탄수화물:"
+                android:text="탄수화물: 36"
                 android:textSize="20dp"
-                android:layout_marginTop="3dp"
-                android:id="@+id/wTVTansu"></TextView>
+                android:id="@+id/wTVTansu"
+                android:layout_marginTop="10dp"
+                ></TextView>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="단백질:"
+                android:text="단백질: 7"
                 android:textSize="20dp"
-                android:layout_marginTop="2dp"
-                android:id="@+id/wTVProtein"></TextView>
+                android:id="@+id/wTVProtein"
+                android:layout_marginTop="5dp"
+                ></TextView>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="지방:"
+                android:text="지방: 7"
+                android:id="@+id/wTVTFat"
                 android:textSize="20dp"
-                android:layout_marginTop="2dp"
-                android:id="@+id/wTVTFat"></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="나트륨:"
-                android:textSize="20dp"
-                android:layout_marginTop="2dp"
-                android:id="@+id/wTVNat"></TextView>
+                android:layout_marginTop="5dp"
+                ></TextView>
 
         </LinearLayout>
 

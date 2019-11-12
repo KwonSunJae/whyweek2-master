@@ -1,22 +1,22 @@
 package com.algomukja.DideatListview;
 
 public class Food {
-    private String url;
+    private int url;
     private int protein;
     private int fat;
     private int tansu;
     private int Nat;
 
-    public String getUrl() {
+    public int getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(int url) {
         this.url = url;
     }
 
     private String fName;
-    public Food(int t, int p, int f,int n, String name,String url){
+    public Food(int t, int p, int f,int n, String name,int url){
         this.tansu =t;
         this.protein =p;
         this.fat =f;

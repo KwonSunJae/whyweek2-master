@@ -2,6 +2,11 @@ package com.algomukja.FactoringUserInformation;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import com.algomukja.DideatListview.Food;
+
+import java.util.ArrayList;
 
 public class UserSettingsw {
     private final SharedPreferences.Editor medit;
@@ -16,7 +21,138 @@ public class UserSettingsw {
     private int jul;
     private double motiveW;
     private int sex;
-    private int act;
+    private int act=0;
+
+    private int tan;
+    private int pro;
+    private int nat;
+    private int fat;
+
+    public int getTan() {
+        return mUserSettingsw.getInt("TANS",0);
+    }
+
+    public void setTan(int tan) {
+        this.tan = tan;
+        medit.putInt("TANS",tan);
+        medit.commit();
+    }
+
+    public int getPro() {
+        return mUserSettingsw.getInt("PROT",0);
+    }
+
+    public void setPro(int pro) {
+        this.pro = pro;
+        medit.putInt("PROT",pro);
+        medit.commit();
+    }
+
+    public int getNat() {
+        return mUserSettingsw.getInt("NAT",0);
+    }
+
+    public void setNat(int nat) {
+        this.nat = nat;
+        medit.putInt("NAT",nat);
+        medit.commit();
+    }
+
+    public int getFat() {
+        return mUserSettingsw.getInt("FAT",0);
+    }
+
+    public void setFat(int fat) {
+        this.fat = fat;
+        medit.putInt("FAT",fat);
+        medit.commit();
+    }
+
+    private Food person;
+    private int fnumber=0;
+
+    public int getfnumber() {
+        return mUserSettingsw.getInt("fNUM",0);
+    }
+
+    public void setfnumber(int faet) {
+        this.fnumber = faet;
+        medit.putInt("fNUM",faet);
+        medit.commit();
+    }
+
+    public void addFood( Food f){
+        String key = getfnumber()+"food";
+        setfnumber(getfnumber()+1);
+        String s = "";
+        s+= f.getfName()+"'";
+        s+= f.getUrl()+"'";
+        setTan(getTan()+f.getTansu());
+        setPro(getPro()+f.getProtein());
+        setFat(getFat()+f.getFat());
+        setNat(getNat()+f.getNat());
+        Log.d("tlqkf", Integer.toString(this.getTan()));
+
+        s+= f.getTansu()+"'";
+        s+= f.getProtein()+"'";
+        s+= f.getFat()+"'";
+        s+= f.getNat()+"'";
+        medit.putString(key,s);
+        medit.commit();
+
+
+    }
+
+
+    public Food getPerson(){
+
+            String f = mUserSettingsw.getString("PERSON","!");
+            if(!f.equals("!")){
+                Food temp = new Food(1,1,1,1,"",111);
+                String[] t = f.split("'");
+                temp.setFat((int) Float.parseFloat(t[4]));
+                temp.setNat(Integer.parseInt(t[5]));
+                temp.setfName(t[0]);
+                temp.setUrl(Integer.parseInt(t[1]));
+                temp.setProtein(Integer.parseInt(t[3]));
+                temp.setTansu(Integer.parseInt(t[2]));
+                return temp;
+            }
+            return null;
+
+    }
+    public  int getFnumber(){
+        return getfnumber();
+    }
+    public ArrayList<Food> getFood(){
+        ArrayList<Food> result= new ArrayList<>();
+        if(this.getFnumber()!=0){
+            for(int i=0; i<getFnumber();i++){
+                String f = mUserSettingsw.getString((i)+"food","!");
+                Log.d("ddddtlqkf",f);
+                if(!f.equals("!")){
+                    Food temp = new Food(1,1,1,1,"",111);
+                    String[] t = f.split("'");
+                    temp.setFat((int) Float.parseFloat(t[4]));
+                    temp.setNat(Integer.parseInt(t[5]));
+                    temp.setfName(t[0]);
+                    temp.setUrl(Integer.parseInt(t[1]));
+                    temp.setProtein(Integer.parseInt(t[3]));
+                    temp.setTansu(Integer.parseInt(t[2]));
+                    result.add(List_Copy(temp));
+                    Log.d("ddddtlqkf",temp.toString());
+                }
+
+            }
+            return result;
+        }
+        return null;
+    }
+
+    private Food List_Copy(Food temp) {
+        Food te= new Food(temp.getTansu(),temp.getProtein(),temp.getFat(),temp.getNat(),temp.getfName(),temp.getUrl());
+        return te;
+    }
 
 
     public String getUserPHn() {
@@ -80,6 +216,8 @@ public class UserSettingsw {
                 "UserSettings",Context.MODE_PRIVATE
         );
         medit = mUserSettingsw.edit();
+
+
     }
 
     public String getName() {

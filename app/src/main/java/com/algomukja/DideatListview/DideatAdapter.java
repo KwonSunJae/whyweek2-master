@@ -1,6 +1,7 @@
 package com.algomukja.DideatListview;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,8 +60,11 @@ public class DideatAdapter extends BaseAdapter {
         TVTansu = v.findViewById(R.id.TVTansu);
         TVProtein = v.findViewById(R.id.TVProtein);
         TVFat = v.findViewById(R.id.TVFat);
-
+        Log.d("dddcount",Integer.toString(this.count++));
         Food f = dideats.get(i);
+        if(f.getUrl()!=111){
+            imgView.setImageResource(f.getUrl());
+        }
         TVfName.setText(f.getfName());
         TVFat.setText("지방 : "+f.getFat());
         TVNat.setText("Na : "+f.getNat());

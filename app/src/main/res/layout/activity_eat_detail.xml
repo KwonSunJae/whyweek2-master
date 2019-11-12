@@ -11,8 +11,243 @@
         android:orientation="vertical"
         android:background="@drawable/chart_detail">
 
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:background="#0000ff00"
+            android:id="@+id/goHome"></Button>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:background="#F3F3F3">
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_navigate_before_black_24dp"
+                android:id="@+id/BtnBefore"
+                android:layout_gravity="center"
+                ></Button>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:text="2019년 11월"
+                android:layout_gravity="center"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:id="@+id/TVMonth"
+                android:text="1주차"
+                android:layout_gravity="center"></TextView>
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_navigate_next_black_24dp"
+                android:id="@+id/BtnAfter"
+                android:layout_gravity="center"
+                ></Button>
+        </LinearLayout>
+        <com.github.mikephil.charting.charts.LineChart
+            android:layout_height="400dp"
+            android:layout_width="match_parent"
+            android:id="@+id/linchart"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#45A3B1"
+            android:gravity="center">
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text=" 일"
+                ></TextView>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text=" 월"
+                ></TextView>
+            <TextView
+                android:layout_width="50dp"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_height="40dp"
+                android:text=" 화"
+                ></TextView>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:text=" 수"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                ></TextView>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:text=" 목"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                ></TextView>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:text=" 금"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                ></TextView>
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:text=" 토"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                ></TextView>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/RGChart"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#A2E9B3"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:checked="true"
+                android:id="@+id/RSUN"></RadioButton>
+            <RadioButton
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/RMon"></RadioButton>
+            <RadioButton
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/RTue"></RadioButton>
+            <RadioButton
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/RWed"></RadioButton>
+            <RadioButton
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/RThu"></RadioButton>
+            <RadioButton
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/RFri"></RadioButton>
+            <RadioButton
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:id="@+id/RSat"></RadioButton>
+
+
+
+        </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#DDDDDD"
+        >
+        <LinearLayout
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="25dp"
+
+            android:layout_marginLeft="30dp"></LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/ChartTansu"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="탄수화물 : 1000"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"></TextView>
+        <LinearLayout
+
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="25dp"
+
+            android:layout_marginLeft= "30dp"
+            ></LinearLayout>
+        <TextView
+            android:id="@+id/ChartFat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="지방 : 1000"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"></TextView>
+
 
     </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#DDDDDD"
+            >
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="#45A3B1"
+                android:layout_marginTop="25dp"
+
+                android:layout_marginLeft="30dp"></LinearLayout>
+            <TextView
+                android:id="@+id/ChartPro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="단백질 : 1000"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"></TextView>
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginTop="25dp"
+
+                android:layout_marginLeft= "30dp"
+                ></LinearLayout>
+            <TextView
+                android:id="@+id/ChartNa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="나트륨 : 1000"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"></TextView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

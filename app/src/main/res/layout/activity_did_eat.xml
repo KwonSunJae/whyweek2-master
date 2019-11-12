@@ -11,15 +11,35 @@
     android:orientation="vertical"
     android:background="@drawable/dideat"
     >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="84dp"
-        >
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#F3F3F3"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center"
+
+                >
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_add_circle_outline_black_24dp"
+                    android:id="@+id/BTNadd"
+                    ></Button>
+
+
+
+
+
+            </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -33,1296 +53,1287 @@
                 ></TextView>
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/LVDidEat"
-
-                >
+                android:layout_height="130dp"
+                android:id="@+id/LVDidEat">
 
             </ListView>
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-
-                >
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/ic_add_circle_outline_black_24dp"
-                    android:id="@+id/IMGBTNadd"
-                    ></ImageButton>
-
-
-
-
-            </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="2019-11-20"
-                android:background="#A2E9B3"
-                android:layout_gravity="center"
-                android:textColor="#707070"
-                android:gravity="center"
-                android:textSize="20dp"
-
-                ></TextView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/imgViewFood"
-                    android:src="@drawable/d1"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="모닝빵"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 276"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 36"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 7"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 7"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="#F3F3F3"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_gravity="center"
-            >
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-
-                android:src="@drawable/d2"
-                >
-
-            </ImageView>
-            <LinearLayout
-                android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center">
-                <TextView
-                    android:layout_width="120dp"
-                    android:layout_height="30dp"
-                    android:text="베이글"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    ></TextView>
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:text="Na: 556"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="40dp"
-                    android:gravity="center"
-                    ></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-
+                android:layout_marginTop="0dp"
+                android:fillViewport="true"
                 >
-                <TextView
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="탄수화물: 69"
-                    android:textSize="20dp"
-                    android:layout_marginTop="10dp"
-                    ></TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="단백질: 13"
-                    android:textSize="20dp"
-                    android:layout_marginTop="5dp"
-                    ></TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="지방: 1"
-                    android:textSize="20dp"
-                    android:layout_marginTop="5dp"
-                    ></TextView>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="2019-11-20"
+                        android:background="#A2E9B3"
+                        android:layout_gravity="center"
+                        android:textColor="#707070"
+                        android:gravity="center"
+                        android:textSize="20dp"
+
+                        ></TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:id="@+id/imgViewFood"
+                            android:src="@drawable/d1"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="모닝빵"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 276"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 36"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 7"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 7"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
 
 
 
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d2"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="베이글"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 556"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 69"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 13"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 1"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d3"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="비빔밥"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1337"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 115"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 20"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 19"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d4"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="곰탕"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 823"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 7"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 70"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 30"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="2019-11-19"
+                        android:background="#A2E9B3"
+                        android:layout_gravity="center"
+                        android:textColor="#707070"
+                        android:gravity="center"
+                        android:textSize="20dp"
+
+                        ></TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d5"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="깨죽"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1160"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 79"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 14"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 16"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d6"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="오곡밥"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 114"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 82"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 12"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 1"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d7"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="쌈밥"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 557"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 58"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 13"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 4"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d8"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="호박머핀"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 360"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 58"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 6"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 13"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="2019-11-18"
+                        android:background="#A2E9B3"
+                        android:layout_gravity="center"
+                        android:textColor="#707070"
+                        android:gravity="center"
+                        android:textSize="20dp"
+
+                        ></TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d9"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="유부초밥"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1046"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 82"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 12"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 7"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d10"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="비빔냉면"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1664"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 122"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 20"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 6"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d11"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="훈제오리"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1220"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 12"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 43"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 64"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d12"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="감자탕"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 2631"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 27"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 96"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 52"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="2019-11-17"
+                        android:background="#A2E9B3"
+                        android:layout_gravity="center"
+                        android:textColor="#707070"
+                        android:gravity="center"
+                        android:textSize="20dp"
+
+                        ></TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d13"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="알탕"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 2642"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 11"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 67"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 13"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d14"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="60dp"
+                                android:text="크림소스 스파게티"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1030"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 74"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 22"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 51"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d15"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="60dp"
+                                android:text="까르보네피자"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1251"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 149"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 40"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 13"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#F3F3F3"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+
+                            android:src="@drawable/d3"
+                            >
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="30dp"
+                                android:text="비빔밥"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Na: 1337"
+                                android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="탄수화물: 115"
+                                android:textSize="20dp"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="단백질: 20"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:text="지방: 19"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5dp"
+                                ></TextView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
         </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d3"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="비빔밥"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1337"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 115"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 20"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 19"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d4"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="곰탕"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 823"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 7"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 70"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 30"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="2019-11-19"
-                android:background="#A2E9B3"
-                android:layout_gravity="center"
-                android:textColor="#707070"
-                android:gravity="center"
-                android:textSize="20dp"
-
-                ></TextView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d5"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="깨죽"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1160"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 79"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 14"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 16"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d6"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="오곡밥"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 114"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 82"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 12"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 1"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d7"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="쌈밥"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 557"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 58"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 13"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 4"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d8"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="호박머핀"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 360"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 58"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 6"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 13"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="2019-11-18"
-                android:background="#A2E9B3"
-                android:layout_gravity="center"
-                android:textColor="#707070"
-                android:gravity="center"
-                android:textSize="20dp"
-
-                ></TextView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d9"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="유부초밥"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1046"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 82"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 12"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 7"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d10"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="비빔냉면"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1664"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 122"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 20"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 6"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d11"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="훈제오리"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1220"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 12"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 43"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 64"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d12"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="감자탕"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 2631"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 27"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 96"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 52"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="2019-11-17"
-                android:background="#A2E9B3"
-                android:layout_gravity="center"
-                android:textColor="#707070"
-                android:gravity="center"
-                android:textSize="20dp"
-
-                ></TextView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d13"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="알탕"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 2642"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 11"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 67"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 13"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d14"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="60dp"
-                        android:text="크림소스 스파게티"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1030"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 74"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 22"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 51"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d15"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="60dp"
-                        android:text="까르보네피자"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1251"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 149"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 40"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 13"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#F3F3F3"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-
-                    android:src="@drawable/d3"
-                    >
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center">
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:text="비빔밥"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:text="Na: 1337"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40dp"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="탄수화물: 115"
-                        android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="단백질: 20"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:text="지방: 19"
-                        android:textSize="20dp"
-                        android:layout_marginTop="5dp"
-                        ></TextView>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
 
 
 

@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.algomukja.DideatListview.Food;
 import com.algomukja.Eat.DidEatActivity;
 import com.algomukja.Eat.WillEatAcitvity;
 import com.algomukja.FactoringUserInformation.Setting_UserActicity;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private int currentApiVersion;
+    private BarChart chart;
+
 
     @Override
     @SuppressLint("NewApi")
@@ -100,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    private class LabelFormatter implements IAxisValueFormatter {
+    public static class LabelFormatter implements IAxisValueFormatter {
 
         String[] labels;
         BarLineChartBase<?> chart;
@@ -124,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        BarChart chart = findViewById(R.id.barchart);
+        chart = findViewById(R.id.barchart);
         chart.setDrawBarShadow(false);
 
         chart.setDrawGridBackground(false);
@@ -148,16 +151,36 @@ public class MainActivity extends AppCompatActivity {
         leftAxis.setTextSize(12);
         leftAxis.setAxisLineColor(Color.WHITE);
         leftAxis.setDrawGridLines(false);
+
         leftAxis.setGranularity(0);
+
         leftAxis.setLabelCount(4, true);
         leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
 
+        UserSettingsw us = new UserSettingsw(this);
+        Food pe = us.getPerson();
         //// 탄단지나칼 값넣기
-        float[] valOne = {10};
-        float[] valTwo = {60};
-        float[] valThree = {20};
-        float[] valFour = {40};
-        float[] valFive = {60};
+//        float[] valOne = {(int)(us.getTan()/390*100)};
+//        float[] valTwo = {(int)(us.getPro()/65*100)};
+//        float[] valThree = {(int)(us.getFat()/72*100)};
+//        float[] valFour = {(int)(us.getNat()/1500*100)};
+//        float[] valFive = {(int)(us.getJul()/2600*100)};
+        ArrayList<Food>  t = us.getFood();
+        int tan=0,dan=0,gi=0,na=0,kcal=0;
+        if(t!=null){
+            for(int i=0; i<t.size();i++){
+                tan+=t.get(i).getTansu();
+                dan+=t.get(i).getProtein();
+                gi+=t.get(i).getFat();
+                na+=t.get(i).getNat();
+            }
+        }
+        Log.d("roTlqkftus",Integer.toString(tan/390*100));
+        float[] valOne = {(int)(tan/390.0*100)};
+        float[] valTwo = {(int)(dan/65.0*100)};
+        float[] valThree = {(int)(gi/72.0*100)};
+        float[] valFour = {(int)(na/1500.0*100)};
+        float[] valFive = {(int)(us.getJul()/2600.0*100)};
 
         ArrayList<BarEntry> barOne = new ArrayList<>();
         ArrayList<BarEntry> barTwo = new ArrayList<>();
@@ -224,6 +247,7 @@ public class MainActivity extends AppCompatActivity {
         DidEat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 Intent intent = new Intent(MainActivity.this, DidEatActivity.class);
                 Log.d("sunjae", "succecc");
                 startActivity(intent);
@@ -233,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
         WillEat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 Intent intent2 = new Intent(MainActivity.this, WillEatAcitvity.class);
                 startActivity(intent2);
             }
@@ -241,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
                 Intent intent  = new Intent(MainActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
@@ -250,7 +276,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, EatDetail.class);
+                startActivity(intent);
             }
         });
 
