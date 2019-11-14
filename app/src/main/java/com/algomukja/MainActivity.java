@@ -86,20 +86,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_main);
-
+        Intent intent = new Intent(this, LoadingSplashActivity.class);
+        startActivity(intent);
 
         UserSettingsw mSP = UserSettingsw.getmInstance(this);
 
         init();
-        if (mSP.getUserID().equals("um")) {
-            Intent intent = new Intent(this, LoadingSplashActivity.class);
-            startActivity(intent);
-            Intent intent1 = new Intent(this, UserHomeActivity.class);
-            startActivity(intent1);
-        }
+
         if (mSP.getAge() == 0) {
             Intent intent1 = new Intent(this, Setting_UserActicity.class);
             startActivity(intent1);
+
         }
 
     }
@@ -181,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         float[] valThree = {(int)(gi/72.0*100)};
         float[] valFour = {(int)(na/1500.0*100)};
         float[] valFive = {(int)(us.getJul()/2600.0*100)};
-
+        final int color[] = {ContextCompat.getColor(this, R.color.chart_color3),ContextCompat.getColor(this, R.color.chart_color4),ContextCompat.getColor(this, R.color.chart_color5),ContextCompat.getColor(this, R.color.colorPrimaryDark),ContextCompat.getColor(this,R.color.chart_color2)};
         ArrayList<BarEntry> barOne = new ArrayList<>();
         ArrayList<BarEntry> barTwo = new ArrayList<>();
         ArrayList<BarEntry> barThree = new ArrayList<>();
@@ -194,30 +191,65 @@ public class MainActivity extends AppCompatActivity {
             barFour.add(new BarEntry(i, valFour[i]));
             barFive.add(new BarEntry(i, valFive[i]));
         }
-        int color = ContextCompat.getColor(this, R.color.chart_color);
+
         chart.getAxisRight().setEnabled(false);
         chart.getLegend().setEnabled(false);
         BarDataSet set1 = new BarDataSet(barOne, "barOne");
-        set1.setColor(color);
+        int temp =0;
+        if(valOne[0]<=80){
+            temp=2;
+        }
+        else if(valOne[0]<=120){
+            temp=1;
+        }
+        set1.setColor(color[temp]);
         BarDataSet set2 = new BarDataSet(barTwo, "barTwo");
-        set2.setColor(color);
+        temp =0;
+        if(valTwo[0]<=80){
+            temp=2;
+        }
+        else if(valTwo[0]<=120){
+            temp=1;
+        }
+        set2.setColor(color[temp]);
         BarDataSet set3 = new BarDataSet(barThree, "barTwo");
-        set3.setColor(color);
+        temp =0;
+        if(valThree[0]<=80){
+            temp=2;
+        }
+        else if(valThree[0]<=120){
+            temp=1;
+        }
+        set3.setColor(color[temp]);
         BarDataSet set4 = new BarDataSet(barFour, "barTwo");
-        set4.setColor(color);
+       temp =0;
+        if(valFour[0]<=80){
+            temp=2;
+        }
+        else if(valFour[0]<=120){
+            temp=1;
+        }
+        set4.setColor(color[temp]);
         BarDataSet set5 = new BarDataSet(barFive, "barTwo");
-        set5.setColor(color);
+        temp =0;
+        if(valFive[0]<=80){
+            temp=2;
+        }
+        else if(valFive[0]<=120){
+            temp=1;
+        }
+        set5.setColor(color[temp]);
 
         set1.setHighlightEnabled(false);
-        set1.setDrawValues(false);
+
         set2.setHighlightEnabled(false);
-        set2.setDrawValues(false);
+
         set3.setHighlightEnabled(false);
-        set3.setDrawValues(false);
+
         set4.setHighlightEnabled(false);
-        set4.setDrawValues(false);
+
         set5.setHighlightEnabled(false);
-        set5.setDrawValues(false);
+
 
         ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
         dataSets.add(set1);

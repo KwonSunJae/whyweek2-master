@@ -2,12 +2,14 @@ package com.algomukja.DideatListview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.algomukja.FactoringUserInformation.UserSettingsw;
+import com.algomukja.MainActivity;
 import com.algomukja.R;
 
 public class Adddideat extends AppCompatActivity {
@@ -54,6 +56,12 @@ public class Adddideat extends AppCompatActivity {
         });
 
     }
+    @Override
+    protected void onDestroy() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        super.onDestroy();
 
+    }
 
 }

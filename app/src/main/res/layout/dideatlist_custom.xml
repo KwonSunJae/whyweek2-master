@@ -1,87 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="#F3F3F3"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_height="160dp"
         android:layout_gravity="center"
-        >
+        android:background="#F3F3F3"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/imgViewFood"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
-            android:id="@+id/imgViewFood"
             android:src="@drawable/app_icon"
 
             >
 
         </ImageView>
+
         <LinearLayout
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_gravity="center">
+            android:orientation="vertical">
+
             <TextView
+                android:id="@+id/TVfName"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="이름"
-                android:textSize="20dp"
-                android:id="@+id/TVfName"
-                android:layout_gravity="center"
-                android:gravity="center"
-                ></TextView>
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:text="Na: 276"
-                android:id="@+id/TVNat"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:gravity="center"
-                ></TextView>
+                android:textSize="20dp"></TextView>
+
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
 
             >
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="탄수화물: 36"
-                android:textSize="20dp"
                 android:id="@+id/TVTansu"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
                 android:layout_marginTop="10dp"
-                ></TextView>
+                android:text="탄수화물: 36"
+                android:textSize="20dp"></TextView>
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="단백질: 7"
-                android:textSize="20dp"
                 android:id="@+id/TVProtein"
-                android:layout_marginTop="5dp"
-                ></TextView>
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="지방: 7"
-                android:id="@+id/TVFat"
-                android:textSize="20dp"
                 android:layout_marginTop="5dp"
-                ></TextView>
+                android:text="단백질: 7"
+                android:textSize="20dp"></TextView>
+
+            <TextView
+                android:id="@+id/TVFat"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="지방: 7"
+                android:textSize="20dp"></TextView>
+            <TextView
+                android:id="@+id/TVNat"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+
+
+                android:text="Na: 276"
+                android:textSize="20dp"></TextView>
 
         </LinearLayout>
-
 
 
     </LinearLayout>

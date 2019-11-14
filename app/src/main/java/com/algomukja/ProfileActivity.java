@@ -3,11 +3,14 @@ package com.algomukja;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.algomukja.FactoringUserInformation.Setting_UserActicity;
 import com.algomukja.FactoringUserInformation.UserSettingsw;
 
 import org.w3c.dom.Text;
@@ -16,6 +19,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     private int currentApiVersion;
+    private Button EditBtn;
 
     @Override
     @SuppressLint("NewApi")
@@ -64,6 +68,15 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView userMweight;
     private TextView userAct;
     public void init(){
+        EditBtn = findViewById(R.id.BtnEdit);
+        EditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                Intent intent = new Intent(ProfileActivity.this, Setting_UserActicity.class);
+                startActivity(intent);
+            }
+        });
         UserSettingsw us = new UserSettingsw(this);
         userAct = findViewById(R.id.userAct);
         userWeight = findViewById(R.id.userWeight);

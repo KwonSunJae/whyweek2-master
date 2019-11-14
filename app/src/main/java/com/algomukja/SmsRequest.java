@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SmsRequest extends StringRequest {
-    final static private String URL= "http://http://tlgur5869.cafe24.com/YouEat.php";
+    final static private String URL= "http://tlgur5869.cafe24.com/YouEat.php";
     private Map<String, String> parameters;
     public SmsRequest(String d, Response.Listener<String> listener){
         super(Request.Method.POST, URL, listener, null);

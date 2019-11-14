@@ -67,7 +67,7 @@ public class DideatAdapter extends BaseAdapter {
         }
         TVfName.setText(f.getfName());
         TVFat.setText("지방 : "+f.getFat());
-        TVNat.setText("Na : "+f.getNat());
+        TVNat.setText("나트륨 : "+f.getNat());
         TVTansu.setText("탄수화물 : "+f.getTansu());
         TVProtein.setText("단백질 : "+f.getProtein());
 

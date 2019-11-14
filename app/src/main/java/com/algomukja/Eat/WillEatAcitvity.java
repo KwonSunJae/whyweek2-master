@@ -45,12 +45,13 @@ public class WillEatAcitvity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try{
+                    Log.d("dxdx",response);
                     JSONObject jsonResponse = new JSONObject(response);
                     JSONArray success = jsonResponse.getJSONArray("response");
                     int count=0;
-                    while (count<success.length()){
+                    while (count<success.length()&&count!=10){
                         JSONObject object = success.getJSONObject(count);
-                        if(!object.getString("resourceID").equals(""))
+                        if(object.getString("resourceID").length()>0)
                             lf.add(new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),arrImg[object.getInt("resourceID")-1]));
                         else
                             lf.add(new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),111));
@@ -61,7 +62,7 @@ public class WillEatAcitvity extends AppCompatActivity {
                     }
                     wa = new WilleatAdapter(getApplicationContext(),lf);
                     listVIew.setAdapter(wa);
-                    listVIew.notifyAll();
+
                     listVIew.invalidate();
 
                 }
@@ -71,7 +72,12 @@ public class WillEatAcitvity extends AppCompatActivity {
                 }
             }
         };
-        DataRequest loginRequest = new DataRequest(us.getTan(),us.getPro(),us.getFat(),us.getNat(),responseListener);
+        int tan = 390-us.getTan();
+        int pro = 65 - us.getPro();
+        int fat = 72 - us.getFat();
+        int Nat = 1500 - us.getNat();
+        Log.d("d",Integer.toString(tan)+Integer.toString(pro)+Integer.toString(fat)+Integer.toString(Nat));
+        DataRequest loginRequest = new DataRequest(tan<0?0:tan,pro<0?0:pro,fat<0?0:fat,Nat<0?0:Nat,responseListener);
         RequestQueue queue = Volley.newRequestQueue(WillEatAcitvity.this);
         queue.add(loginRequest);
 

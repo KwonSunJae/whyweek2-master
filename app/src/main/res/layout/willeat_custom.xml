@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="160dp"
         android:background="#F3F3F3"
         android:orientation="horizontal"
         android:gravity="center"
@@ -16,7 +16,7 @@
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
-            android:id="@+id/imgViewFood"
+            android:id="@+id/wimgViewFood"
             android:src="@drawable/app_icon"
 
             >
@@ -40,22 +40,13 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="30dp"
-                android:text="kcal"
+                android:text=""
                 android:textSize="20dp"
                 android:id="@+id/wTVkcal"
                 android:layout_gravity="center"
                 android:gravity="center"
                 ></TextView>
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:text="Na: 276"
-                android:id="@+id/wTVNat"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="0dp"
-                android:gravity="center"
-                ></TextView>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="180dp"
@@ -86,6 +77,14 @@
                 android:id="@+id/wTVTFat"
                 android:textSize="20dp"
                 android:layout_marginTop="5dp"
+                ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="나트륨: 276"
+                android:id="@+id/wTVNat"
+                android:textSize="20dp"
+
                 ></TextView>
 
         </LinearLayout>

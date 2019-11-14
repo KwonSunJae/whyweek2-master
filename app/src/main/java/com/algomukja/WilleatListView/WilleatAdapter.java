@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.algomukja.DideatListview.Dideat;
@@ -23,6 +24,7 @@ public class WilleatAdapter extends BaseAdapter {
     private TextView TVNat;
     private TextView fName;
     private ArrayList<Food> ALfood;
+    private ImageView img;
 
     public WilleatAdapter(Context context, List<Food> foodList) {
         this.ct = context;
@@ -51,6 +53,10 @@ public class WilleatAdapter extends BaseAdapter {
         TVProtein = v.findViewById(R.id.wTVProtein);
         TVTansu = v.findViewById(R.id.wTVTansu);
         fName = v.findViewById(R.id.TVfName);
+        img = v.findViewById(R.id.wimgViewFood);
+        if(Foods.get(i).getUrl()!=111){
+            img.setImageResource(Foods.get(i).getUrl());
+        }
         TVFat.setText("지방:"+Integer.toString(Foods.get(i).getFat()));
         TVTansu.setText("탄수화물:"+Integer.toString(Foods.get(i).getTansu()));
         TVProtein.setText("단백질:"+Integer.toString(Foods.get(i).getProtein()));

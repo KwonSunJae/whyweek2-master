@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.algomukja.DideatListview.Food;
+import com.algomukja.FactoringUserInformation.UserSettingsw;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -22,6 +24,7 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 import javax.security.auth.Subject;
@@ -46,6 +49,9 @@ public class EatDetail extends AppCompatActivity {
     private ArrayList<ArrayList> MonthNat  ;
     private ArrayList<ILineDataSet> lineDataSets;
     private RadioGroup RGchart;
+    private ArrayList<ArrayList> MonthKcal;
+    private TextView TVcal;
+
 
     @Override
     @SuppressLint("NewApi")
@@ -110,6 +116,7 @@ public class EatDetail extends AppCompatActivity {
     private ArrayList<Entry> prot;
     private ArrayList<Entry> fat;
     private ArrayList<Entry> nat;
+    private ArrayList<Entry> cal;
     @SuppressLint("NewApi")
     @Override
     public void onWindowFocusChanged(boolean hasFocus)
@@ -149,7 +156,7 @@ public class EatDetail extends AppCompatActivity {
         leftAxis.setAxisLineColor(Color.WHITE);
         leftAxis.setDrawGridLines(false);
         leftAxis.setGranularity(0);
-        leftAxis.setLabelCount(4, true);
+        leftAxis.setLabelCount(5, true);
         leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
 
 
@@ -160,10 +167,24 @@ public class EatDetail extends AppCompatActivity {
          MonthProtein = new ArrayList<>();
           MonthFat = new ArrayList<>();
           MonthNat = new ArrayList<>();
-
+        MonthKcal = new ArrayList<>();
 
 
          lineDataSets = new ArrayList<>();
+
+        UserSettingsw us= new UserSettingsw(this);
+        ArrayList<Food>  t = us.getFood();int tan=0,dan=0,gi=0,na=0,kcal=0;
+        if(t!=null){
+            for(int i=0; i<t.size();i++){
+                tan+=t.get(i).getTansu();
+                dan+=t.get(i).getProtein();
+                gi+=t.get(i).getFat();
+                na+=t.get(i).getNat();
+
+            }
+        }
+        kcal= us.getJul();
+        Log.d("roTlqkftus",Integer.toString(tan/390*100));
 
 
         final float[][] d = {
@@ -188,11 +209,11 @@ public class EatDetail extends AppCompatActivity {
                 {280,	81,	67,	1550,	2550},
                 {330,	64,	54,	1280,	2200},
                 {370,	47,	78,	1510,	2780},
-                {227, 110, 57, 2992,0},
-                {277 ,45 ,34, 2191,0},
-                {243 ,171 ,129, 6561,0},
-                {349, 149 ,96, 6260,0},{
-                    0,0,0,0,0
+                {227, 110, 57, 2992,1854},
+                {277 ,45 ,34, 2191,1595},
+                {243 ,171 ,129, 6561,2826},
+                {349, 149 ,96, 6260,2854},{
+                tan,dan,gi,na,kcal
         },{
                 0,0,0,0,0
         },{
@@ -203,7 +224,8 @@ public class EatDetail extends AppCompatActivity {
         prot = new ArrayList<>();
         fat = new ArrayList<>();
         nat = new ArrayList<>();
-        final int color[] = {ContextCompat.getColor(this, R.color.colorAccent),ContextCompat.getColor(this, R.color.chart_color),ContextCompat.getColor(this, R.color.colorPrimary),ContextCompat.getColor(this, R.color.colorPrimaryDark)};
+        cal = new ArrayList<>();
+        final int color[] = {ContextCompat.getColor(this, R.color.colorAccent),ContextCompat.getColor(this, R.color.chart_color),ContextCompat.getColor(this, R.color.colorPrimary),ContextCompat.getColor(this, R.color.colorPrimaryDark),ContextCompat.getColor(this,R.color.chart_color2)};
         for(int i=0; i<28;i++){
 
 
@@ -211,6 +233,7 @@ public class EatDetail extends AppCompatActivity {
             prot.add(new Entry(date,(int)(d[i][1]/65*100)));
             fat.add(new Entry(date,(int)(d[i][2]/72*100)));
             nat.add(new Entry(date,(int)(d[i][3]/1500*100)));
+            cal.add(new Entry(date,(int)(d[i][4]/2600*100)));
             date++;
             Log.d("test", tansu.toString()+ prot.toString()+ fat.toString());
             if((i+1)%7==0){
@@ -225,10 +248,12 @@ public class EatDetail extends AppCompatActivity {
 
                 MonthProtein.add(List_Copy(prot));
                 tansu .clear();
+                MonthKcal.add(List_Copy(cal));
                 Log.d("d",MonthTansu.get(week).toString());
                 prot.clear();
                 fat.clear();
                 nat.clear();
+                cal.clear();
                 date=1;
             }
         }
@@ -250,23 +275,28 @@ public class EatDetail extends AppCompatActivity {
         LineDataSet lineDataSet4 = new LineDataSet(MonthNat.get(week), "");
         lineDataSet4.setDrawCircles(true);
         lineDataSet4.setColor(color[3]);
+        LineDataSet lineDataSet5 = new LineDataSet(MonthKcal.get(week), "");
+        lineDataSet5.setDrawCircles(true);
+        lineDataSet5.setColor(color[4]);
 
         lineDataSets.add(lineDataSet1);
         lineDataSets.add(lineDataSet2);
         lineDataSets.add(lineDataSet3);
         lineDataSets.add(lineDataSet4);
+        lineDataSets.add(lineDataSet5);
         /*
         tansu.add(new Entry(date,(int)(d[i][0]/390*100)));
             prot.add(new Entry(date,(int)(d[i][1]/65*100)));
             fat.add(new Entry(date,(int)(d[i][2]/72*100)));
             nat.add(new Entry(date,(int)(d[i][3]/1500*100)));
          */
+        TVcal = findViewById(R.id.Chartcal);
 
         TVTansu.setText("탄수화물 : "+(int)(d[week*7+date-1][0]/390*100)+"%");
         TVProt.setText("단백질 : "+(int)(d[week*7+date-1][1]/65*100)+"%");
         TVNat.setText("나트륨 : "+(int)(d[week*7+date-1][3]/1500*100)+"%");
         TVFat.setText("지방 : "+(int)(d[week*7+date-1][2]/72*100)+"%");
-
+        TVcal.setText("칼로리 : "+(int)(d[week*7+date-1][4]/2600*100)+"%");
 
         chart.setData(new LineData(lineDataSets));
         Next.setOnClickListener(new View.OnClickListener(){
@@ -283,7 +313,7 @@ public class EatDetail extends AppCompatActivity {
                     TVProt.setText("단백질 : "+(int)(d[week*7+date-1][1]/65*100)+"%");
                     TVNat.setText("나트륨 : "+(int)(d[week*7+date-1][3]/1500*100)+"%");
                     TVFat.setText("지방 : "+(int)(d[week*7+date-1][2]/72*100)+"%");
-
+                    TVcal.setText("칼로리 : "+(int)(d[week*7+date-1][4]/2600*100)+"%");
                     LineDataSet lineDataSet1 = new LineDataSet(MonthTansu.get(week), "");
                     lineDataSet1.setDrawCircles(true);
                     lineDataSet1.setColor(color[0]);
@@ -298,11 +328,15 @@ public class EatDetail extends AppCompatActivity {
                     LineDataSet lineDataSet4 = new LineDataSet(MonthNat.get(week), "");
                     lineDataSet4.setDrawCircles(true);
                     lineDataSet4.setColor(color[3]);
+                    LineDataSet lineDataSet5 = new LineDataSet(MonthKcal.get(week), "");
+                    lineDataSet5.setDrawCircles(true);
+                    lineDataSet5.setColor(color[4]);
                     lineDataSets.clear();
                     lineDataSets.add(lineDataSet1);
                     lineDataSets.add(lineDataSet2);
                     lineDataSets.add(lineDataSet3);
                     lineDataSets.add(lineDataSet4);
+                    lineDataSets.add(lineDataSet5);
                     chart.setData(new LineData(lineDataSets));
                     chart.notifyDataSetChanged();
                     chart.callOnClick();
@@ -322,7 +356,7 @@ public class EatDetail extends AppCompatActivity {
                     TVProt.setText("단백질 : "+(int)(d[week*7+date-1][1]/65*100)+"%");
                     TVNat.setText("나트륨 : "+(int)(d[week*7+date-1][3]/1500*100)+"%");
                     TVFat.setText("지방 : "+(int)(d[week*7+date-1][2]/72*100)+"%");
-
+                    TVcal.setText("칼로리 : "+(int)(d[week*7+date-1][4]/2600*100)+"%");
                     LineDataSet lineDataSet1 = new LineDataSet(MonthTansu.get(week), "");
                     lineDataSet1.setDrawCircles(true);
                     lineDataSet1.setColor(color[0]);
@@ -337,11 +371,15 @@ public class EatDetail extends AppCompatActivity {
                     LineDataSet lineDataSet4 = new LineDataSet(MonthNat.get(week), "");
                     lineDataSet4.setDrawCircles(true);
                     lineDataSet4.setColor(color[3]);
+                    LineDataSet lineDataSet5 = new LineDataSet(MonthKcal.get(week), "");
+                    lineDataSet5.setDrawCircles(true);
+                    lineDataSet5.setColor(color[4]);
 
                     lineDataSets.add(lineDataSet1);
                     lineDataSets.add(lineDataSet2);
                     lineDataSets.add(lineDataSet3);
                     lineDataSets.add(lineDataSet4);
+                    lineDataSets.add(lineDataSet5);
                     chart.setData(new LineData(lineDataSets));
                     chart.notifyDataSetChanged();
                     chart.callOnClick();
@@ -371,7 +409,7 @@ public class EatDetail extends AppCompatActivity {
                 TVProt.setText("단백질 : "+(int)(d[week*7+date-1][1]/65*100)+"%");
                 TVNat.setText("나트륨 : "+(int)(d[week*7+date-1][3]/1500*100)+"%");
                 TVFat.setText("지방 : "+(int)(d[week*7+date-1][2]/72*100)+"%");
-
+                TVcal.setText("칼로리 : "+(int)(d[week*7+date-1][4]/2600*100)+"%");
             }
         });
 

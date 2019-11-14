@@ -24,6 +24,7 @@ public class DidEatActivity extends AppCompatActivity {
     private ListView listView;
     private DideatAdapter da;
     private Button add;
+    private Boolean Flag = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,8 @@ public class DidEatActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Flag=true;
+                finish();
                 Intent intent = new Intent(DidEatActivity.this, Adddideat.class);
                 startActivity(intent);
             }
@@ -72,10 +74,13 @@ public class DidEatActivity extends AppCompatActivity {
     }
     @Override
     protected void onDestroy() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        super.onDestroy();
+        if(!Flag){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
 
+        }
+
+        super.onDestroy();
     }
 
 

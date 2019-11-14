@@ -36,14 +36,16 @@ public class SmsReciever extends BroadcastReceiver {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
         if (intent.getAction().equals(SMS_RECEIVED)) { Log.d(TAG, "onReceiver() 호출"); // Bundle을 이용해서 메세지 내용을 가져
-        Bundle bundle = intent.getExtras(); SmsMessage[] messages = parseSmsMessage(bundle); // 메세지가 있을 경우 내용을 로그로 출력해 봄
-        if (messages.length > 0) { // 메세지의 내용을 가져옴
+            Bundle bundle = intent.getExtras(); SmsMessage[] messages = parseSmsMessage(bundle); // 메세지가 있을 경우 내용을 로그로 출력해 봄
+            Log.d(TAG, messages[0].getMessageBody());
+        if (messages.length > 0 && messages[0].getMessageBody().contains("알고먹자")) { // 메세지의 내용을 가져옴
+            Log.d(TAG, "onReceiver() 호출");
              String sender = messages[0].getOriginatingAddress();
              String contents = messages[0].getMessageBody().toString();
              Date receivedDate = new Date(messages[0].getTimestampMillis()); // 로그를 찍어보는 과정이므로 생략해도 됨
              contents = contents.replaceAll("(\r\n|\r|\n|\n\r)", " ");
             String [] t = contents.split(" ");
-            String d=t[4]+" "+t[5];
+            String d=t[5];
             us  = new UserSettingsw(context);
 
              Log.d(TAG, "receivedDate : " + d); // 액티비티로 메세지의 내용을 전달해줌
@@ -77,7 +79,7 @@ public class SmsReciever extends BroadcastReceiver {
 
              sendToActivity(context, sender, contents, receivedDate); } }
         
-        throw new UnsupportedOperationException("Not yet implemented");
+
     }
     private void sendToActivity(Context context, String sender, String contents, Date receivedDate){ 
         Intent intent = new Intent(context, MainActivity.class);

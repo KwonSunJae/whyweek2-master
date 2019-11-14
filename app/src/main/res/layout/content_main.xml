@@ -26,6 +26,44 @@
             >
         </Button>
 
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/chart_color5"
+                android:layout_marginLeft="30dp"
+                ></LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="80%이하  "></TextView>
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/chart_color4"
+                ></LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="80~120%  "></TextView>
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/chart_color3"
+                ></LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="120%이상"></TextView>
+        </LinearLayout>
 
 
         <com.github.mikephil.charting.charts.BarChart
@@ -39,7 +77,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_gravity="center"
             android:text="탄수화물  단백질   지방     나트륨   칼로리"
             android:textSize="20dp">
@@ -50,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="30dp">
 
             <Button
                 android:id="@+id/BtnHome"
