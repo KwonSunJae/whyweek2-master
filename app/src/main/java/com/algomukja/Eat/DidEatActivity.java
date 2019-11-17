@@ -1,14 +1,18 @@
 package com.algomukja.Eat;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.algomukja.DideatListview.Adddideat;
 import com.algomukja.DideatListview.Dideat;
@@ -44,6 +48,36 @@ public class DidEatActivity extends AppCompatActivity {
     }
     private void init(){
         listView= findViewById(R.id.LVDidEat);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(DidEatActivity.this);
+
+                builder.setTitle("삭제 하시겠습니까?").setMessage("위의 항목을 삭제하시겠습니까?");
+
+                builder.setPositiveButton("네", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int id)
+                    {
+                        UserSettingsw us = new UserSettingsw(DidEatActivity.this);
+                        us.DeleteFood(i);
+                        listView.notify();
+                        listView.invalidate();
+                        Toast.makeText(getApplicationContext(), "삭제 하였습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                builder.setNegativeButton("아니오", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int id)
+                    {
+                        Toast.makeText(getApplicationContext(), "취소", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
 
         UserSettingsw us = new UserSettingsw(this);
         ArrayList<Food> dd = us.getFood();
@@ -73,6 +107,7 @@ public class DidEatActivity extends AppCompatActivity {
         listView.requestLayout();
     }
     @Override
+
     protected void onDestroy() {
         if(!Flag){
             Intent intent = new Intent(this, MainActivity.class);

@@ -58,7 +58,7 @@ public class SmsReciever extends BroadcastReceiver {
                         int count=0;
                         while (count<success.length()){
                             JSONObject object = success.getJSONObject(count);
-                            Food te = new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),111);
+                            Food te = new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),object.getInt("resourceID"));
                             Log.d("dxdx",object.toString());
                             us.addFood(te);
                             us.setJul(us.getJul()+object.getInt("kcal"));
@@ -77,7 +77,7 @@ public class SmsReciever extends BroadcastReceiver {
             RequestQueue queue = Volley.newRequestQueue(context);
             queue.add(loginRequest);
 
-             sendToActivity(context, sender, contents, receivedDate); } }
+            sendToActivity(context, sender, contents, receivedDate); } }
         
 
     }

@@ -121,6 +121,12 @@ public class UserSettingsw {
             return null;
 
     }
+    public void DeleteFood(int i){
+        String key = i+"food";
+        medit.putString(key,"!");
+        medit.commit();
+    }
+
     public  int getFnumber(){
         return getfnumber();
     }
