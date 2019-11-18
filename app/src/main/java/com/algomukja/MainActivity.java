@@ -1,6 +1,7 @@
 package com.algomukja;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private View header;
 
 
+    public static Activity activity;
     private int currentApiVersion;
     private BarChart chart;
     private BackPressCloseHandler backPressCloseHandler;
@@ -56,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("NewApi")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activity = MainActivity.this;
         backPressCloseHandler = new BackPressCloseHandler(this);
-
+        Log.d("ksu",R.drawable.alio+" "+R.drawable.ohyes);
 
         currentApiVersion = android.os.Build.VERSION.SDK_INT;
 

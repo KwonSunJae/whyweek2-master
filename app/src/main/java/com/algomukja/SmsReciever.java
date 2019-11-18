@@ -84,10 +84,12 @@ public class SmsReciever extends BroadcastReceiver {
 
     }
     private void sendToActivity(Context context, String sender, String contents, Date receivedDate){ 
-        Intent intent = new Intent(context, DidEatActivity.class);
-         
+        Intent intent = new Intent(context, MainActivity.class);
+         MainActivity ma = (MainActivity)MainActivity.activity;
+         ma.finish();
          intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_SINGLE_TOP| Intent.FLAG_ACTIVITY_CLEAR_TOP); 
-         intent.putExtra("sender", sender); intent.putExtra("contents", contents); 
+         intent.putExtra("sender", sender); intent.putExtra("contents", contents);
+         intent.putExtra("flag",0);
          intent.putExtra("receivedDate", format.format(receivedDate));
          context.startActivity(intent);
          } 

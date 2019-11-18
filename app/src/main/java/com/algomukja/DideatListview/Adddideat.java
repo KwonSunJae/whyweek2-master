@@ -43,6 +43,9 @@ public class Adddideat extends AppCompatActivity {
             public void onClick(View view) {
                 Food temp = new Food(Integer.parseInt(fTansu.getText().toString()),Integer.parseInt(fProt.getText().toString()),Integer.parseInt(ffat.getText().toString()),Integer.parseInt(fNat.getText().toString()),fname.getText().toString(),111);
                 temp.setJul(Integer.parseInt(fKcal.getText().toString()));
+                if(temp.getfName().equals("알리오올리오")){
+                    temp.setUrl(2131165275);
+                }
                 UserSettingsw us = new UserSettingsw(Adddideat.this);
                 us.addFood(temp);
 
