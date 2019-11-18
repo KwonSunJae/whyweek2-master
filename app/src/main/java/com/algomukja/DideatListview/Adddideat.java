@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.algomukja.Eat.DidEatActivity;
 import com.algomukja.FactoringUserInformation.UserSettingsw;
 import com.algomukja.MainActivity;
 import com.algomukja.R;
@@ -41,9 +42,10 @@ public class Adddideat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Food temp = new Food(Integer.parseInt(fTansu.getText().toString()),Integer.parseInt(fProt.getText().toString()),Integer.parseInt(ffat.getText().toString()),Integer.parseInt(fNat.getText().toString()),fname.getText().toString(),111);
+                temp.setJul(Integer.parseInt(fKcal.getText().toString()));
                 UserSettingsw us = new UserSettingsw(Adddideat.this);
                 us.addFood(temp);
-                us.setJul(us.getJul()+Integer.parseInt(fKcal.getText().toString()));
+
                 finish();
             }
         });
@@ -58,7 +60,7 @@ public class Adddideat extends AppCompatActivity {
     }
     @Override
     protected void onDestroy() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, DidEatActivity.class);
         startActivity(intent);
         super.onDestroy();
 

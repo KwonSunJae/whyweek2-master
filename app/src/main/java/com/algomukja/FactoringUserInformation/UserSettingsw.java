@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.algomukja.DideatListview.Food;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class UserSettingsw {
@@ -91,12 +92,13 @@ public class UserSettingsw {
         setPro(getPro()+f.getProtein());
         setFat(getFat()+f.getFat());
         setNat(getNat()+f.getNat());
-        Log.d("tlqkf", Integer.toString(this.getTan()));
+        setJul(getJul()+f.getJul());
 
         s+= f.getTansu()+"'";
         s+= f.getProtein()+"'";
         s+= f.getFat()+"'";
         s+= f.getNat()+"'";
+        s+=f.getJul();
         medit.putString(key,s);
         medit.commit();
 
@@ -116,20 +118,30 @@ public class UserSettingsw {
                 temp.setUrl(Integer.parseInt(t[1]));
                 temp.setProtein(Integer.parseInt(t[3]));
                 temp.setTansu(Integer.parseInt(t[2]));
+                temp.setJul(Integer.parseInt(t[6]));
                 return temp;
             }
             return null;
 
     }
     public void DeleteFood(int i){
-        String key = i+"food";
-        medit.putString(key,"!");
-        medit.commit();
+        ArrayList<Food> temp = new ArrayList<>();
+        temp = getFood();
+        setJul(getJul()-temp.get(i).getJul());
+        temp.remove(i);
+        setfnumber(0);
+        for(int j=0; j<temp.size();j++){
+            addFood(temp.get(j));
+        }
+
+
     }
 
     public  int getFnumber(){
         return getfnumber();
     }
+
+
     public ArrayList<Food> getFood(){
         ArrayList<Food> result= new ArrayList<>();
         if(this.getFnumber()!=0){
@@ -145,6 +157,7 @@ public class UserSettingsw {
                     temp.setUrl(Integer.parseInt(t[1]));
                     temp.setProtein(Integer.parseInt(t[3]));
                     temp.setTansu(Integer.parseInt(t[2]));
+                    temp.setJul(Integer.parseInt(t[6]));
                     result.add(List_Copy(temp));
                     Log.d("ddddtlqkf",temp.toString());
                 }
@@ -157,6 +170,7 @@ public class UserSettingsw {
 
     private Food List_Copy(Food temp) {
         Food te= new Food(temp.getTansu(),temp.getProtein(),temp.getFat(),temp.getNat(),temp.getfName(),temp.getUrl());
+        te.setJul(temp.getJul());
         return te;
     }
 
@@ -270,6 +284,7 @@ public class UserSettingsw {
     public void setJul(int jul) {
         this.jul = jul;
         medit.putInt("JUL",jul);medit.commit();
+        Log.d("JULL CHECK",getJul()+"");
     }
 
     public double getMotiveW() {

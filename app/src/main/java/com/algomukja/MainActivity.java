@@ -47,18 +47,18 @@ public class MainActivity extends AppCompatActivity {
 
     private int currentApiVersion;
     private BarChart chart;
+    private BackPressCloseHandler backPressCloseHandler;
+
+    @Override public void onBackPressed() { super.onBackPressed(); backPressCloseHandler.onBackPressed(); }
 
 
     @Override
     @SuppressLint("NewApi")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        backPressCloseHandler = new BackPressCloseHandler(this);
 
-        Log.d("Kwonsujjae",Integer.toString(R.drawable.d1));
-        Log.d("Kwonsujjae",Integer.toString(R.drawable.d3));
-        Log.d("Kwonsujjae",Integer.toString(R.drawable.d13));
-        Log.d("Kwonsujjae",Integer.toString(R.drawable.d14));
-        Log.d("Kwonsujjae",Integer.toString(R.drawable.d15));
+
         currentApiVersion = android.os.Build.VERSION.SDK_INT;
 
         final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -90,17 +90,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, LoadingSplashActivity.class);
-        startActivity(intent);
+
 
         UserSettingsw mSP = UserSettingsw.getmInstance(this);
 
         init();
 
+        int code = 0;
+
+        Intent intent2 = getIntent();
+        if(intent2.hasExtra("flag")){
+            code = intent2.getExtras().getInt("flag",0);
+        }
         if (mSP.getAge() == 0) {
             Intent intent1 = new Intent(this, Setting_UserActicity.class);
+            intent1.putExtra("flag",1);
             startActivity(intent1);
 
+        }
+        if(code!=1){
+            Intent intent = new Intent(this, LoadingSplashActivity.class);
+            startActivity(intent);
         }
 
     }
@@ -169,19 +179,21 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Food>  t = us.getFood();
         int tan=0,dan=0,gi=0,na=0,kcal=0;
         if(t!=null){
-            for(int i=0; i<t.size();i++){
+            for(int i=0; i<us.getfnumber();i++){
                 tan+=t.get(i).getTansu();
                 dan+=t.get(i).getProtein();
                 gi+=t.get(i).getFat();
                 na+=t.get(i).getNat();
+                kcal += t.get(i).getJul();
+                Log.d("roTlqkftus",Integer.toString(kcal));
             }
         }
-        Log.d("roTlqkftus",Integer.toString(tan/390*100));
+        Log.d("roTlqkftus",Integer.toString(kcal));
         float[] valOne = {(int)(tan/390.0*100)};
         float[] valTwo = {(int)(dan/65.0*100)};
         float[] valThree = {(int)(gi/72.0*100)};
         float[] valFour = {(int)(na/1500.0*100)};
-        float[] valFive = {(int)(us.getJul()/2600.0*100)};
+        float[] valFive = {(int)(kcal/2600.0*100)};
         final int color[] = {ContextCompat.getColor(this, R.color.chart_color3),ContextCompat.getColor(this, R.color.chart_color4),ContextCompat.getColor(this, R.color.chart_color5),ContextCompat.getColor(this, R.color.colorPrimaryDark),ContextCompat.getColor(this,R.color.chart_color2)};
         ArrayList<BarEntry> barOne = new ArrayList<>();
         ArrayList<BarEntry> barTwo = new ArrayList<>();

@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.algomukja.DideatListview.Food;
 import com.algomukja.Eat.DataRequest;
+import com.algomukja.Eat.DidEatActivity;
 import com.algomukja.Eat.WillEatAcitvity;
 import com.algomukja.FactoringUserInformation.UserSettingsw;
 import com.algomukja.WilleatListView.WilleatAdapter;
@@ -45,10 +46,10 @@ public class SmsReciever extends BroadcastReceiver {
              Date receivedDate = new Date(messages[0].getTimestampMillis()); // 로그를 찍어보는 과정이므로 생략해도 됨
              contents = contents.replaceAll("(\r\n|\r|\n|\n\r)", " ");
             String [] t = contents.split(" ");
-            String d=t[5];
+            String d=t[4];
             us  = new UserSettingsw(context);
 
-             Log.d(TAG, "receivedDate : " + d); // 액티비티로 메세지의 내용을 전달해줌
+            Log.d(TAG, "receivedDate : " + d); // 액티비티로 메세지의 내용을 전달해줌
             Response.Listener<String> responseListener = new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
@@ -59,9 +60,10 @@ public class SmsReciever extends BroadcastReceiver {
                         while (count<success.length()){
                             JSONObject object = success.getJSONObject(count);
                             Food te = new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),object.getInt("resourceID"));
+                            te.setJul(object.getInt("kcal"));
                             Log.d("dxdx",object.toString());
                             us.addFood(te);
-                            us.setJul(us.getJul()+object.getInt("kcal"));
+
                             count++;
 
                         }
@@ -82,11 +84,12 @@ public class SmsReciever extends BroadcastReceiver {
 
     }
     private void sendToActivity(Context context, String sender, String contents, Date receivedDate){ 
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, DidEatActivity.class);
          
          intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_SINGLE_TOP| Intent.FLAG_ACTIVITY_CLEAR_TOP); 
          intent.putExtra("sender", sender); intent.putExtra("contents", contents); 
-         intent.putExtra("receivedDate", format.format(receivedDate)); context.startActivity(intent); 
+         intent.putExtra("receivedDate", format.format(receivedDate));
+         context.startActivity(intent);
          } 
 
 

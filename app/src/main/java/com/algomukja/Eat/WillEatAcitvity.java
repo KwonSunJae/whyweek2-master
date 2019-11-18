@@ -51,8 +51,8 @@ public class WillEatAcitvity extends AppCompatActivity {
                     int count=0;
                     while (count<success.length()&&count!=10){
                         JSONObject object = success.getJSONObject(count);
-                        if(object.getString("resourceID").length()>0)
-                            lf.add(new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),arrImg[object.getInt("resourceID")-1]));
+                        if(object.getString("resourceID").length()>0&&!object.getString("resourceID").equals("111")&&!object.getString("resourceID").equals("0")){
+                            lf.add(new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),arrImg[object.getInt("resourceID")-1]));}
                         else
                             lf.add(new Food(object.getInt("Tansu"),object.getInt("Prot"),object.getInt("Fat"),object.getInt("Na"),object.getString("Name"),111));
 
@@ -72,10 +72,22 @@ public class WillEatAcitvity extends AppCompatActivity {
                 }
             }
         };
-        int tan = 390-us.getTan();
-        int pro = 65 - us.getPro();
-        int fat = 72 - us.getFat();
-        int Nat = 1500 - us.getNat();
+        ArrayList<Food> t= us.getFood();
+        int tan2=0,dan=0,gi=0,na=0,kcal=0;
+        if(t!=null){
+            for(int i=0; i<us.getfnumber();i++){
+                tan2+=t.get(i).getTansu();
+                dan+=t.get(i).getProtein();
+                gi+=t.get(i).getFat();
+                na+=t.get(i).getNat();
+                kcal += t.get(i).getJul();
+                Log.d("roTlqkftus",Integer.toString(kcal));
+            }
+        }
+        int tan = 390-tan2;
+        int pro = 65 - dan;
+        int fat = 72 - gi;
+        int Nat = 1500 - na;
         Log.d("d",Integer.toString(tan)+Integer.toString(pro)+Integer.toString(fat)+Integer.toString(Nat));
         DataRequest loginRequest = new DataRequest(tan<0?0:tan,pro<0?0:pro,fat<0?0:fat,Nat<0?0:Nat,responseListener);
         RequestQueue queue = Volley.newRequestQueue(WillEatAcitvity.this);
@@ -85,6 +97,7 @@ public class WillEatAcitvity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("flag",1);
         startActivity(intent);
         super.onDestroy();
 

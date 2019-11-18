@@ -6,6 +6,15 @@ public class Food {
     private int fat;
     private int tansu;
     private int Nat;
+    private int Jul;
+
+    public int getJul() {
+        return Jul;
+    }
+
+    public void setJul(int jul) {
+        Jul = jul;
+    }
 
     public int getUrl() {
         return url;

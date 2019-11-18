@@ -60,8 +60,9 @@ public class DideatAdapter extends BaseAdapter {
         TVTansu = v.findViewById(R.id.TVTansu);
         TVProtein = v.findViewById(R.id.TVProtein);
         TVFat = v.findViewById(R.id.TVFat);
-        Log.d("dddcount",Integer.toString(this.count++));
+
         Food f = dideats.get(i);
+        Log.d("dddcount",f.getUrl()+"");
         if(f.getUrl()!=111){
             imgView.setImageResource(f.getUrl());
         }

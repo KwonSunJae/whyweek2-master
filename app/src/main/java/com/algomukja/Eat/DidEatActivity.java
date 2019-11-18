@@ -52,29 +52,35 @@ public class DidEatActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                Toast.makeText(getApplicationContext(),"클릭인식",Toast.LENGTH_LONG).show();
                 AlertDialog.Builder builder = new AlertDialog.Builder(DidEatActivity.this);
+                builder.setTitle("삭제 하시겠습니까?");
+                builder.setMessage("위의 항목을 삭제하시겠습니까?");
+                builder.setPositiveButton("예",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                UserSettingsw us = new UserSettingsw(DidEatActivity.this);
+                                us.DeleteFood(i);
+                                Log.d("dddddd", i+"");
+                                Toast.makeText(getApplicationContext(), "삭제 하였습니다.", Toast.LENGTH_SHORT).show();
+                                Flag=true;
+                                finish();
+                                Intent intent = new Intent(DidEatActivity.this, DidEatActivity.class);
+                                startActivity(intent);
 
-                builder.setTitle("삭제 하시겠습니까?").setMessage("위의 항목을 삭제하시겠습니까?");
 
-                builder.setPositiveButton("네", new DialogInterface.OnClickListener(){
-                    @Override
-                    public void onClick(DialogInterface dialog, int id)
-                    {
-                        UserSettingsw us = new UserSettingsw(DidEatActivity.this);
-                        us.DeleteFood(i);
-                        listView.notify();
-                        listView.invalidate();
-                        Toast.makeText(getApplicationContext(), "삭제 하였습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                            }
+                        });
+                builder.setNegativeButton("아니오",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(getApplicationContext(),"아니오를 선택했습니다.",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                builder.show();
 
-                builder.setNegativeButton("아니오", new DialogInterface.OnClickListener(){
-                    @Override
-                    public void onClick(DialogInterface dialog, int id)
-                    {
-                        Toast.makeText(getApplicationContext(), "취소", Toast.LENGTH_SHORT).show();
-                    }
-                });
+
+
 
             }
         });
@@ -111,6 +117,7 @@ public class DidEatActivity extends AppCompatActivity {
     protected void onDestroy() {
         if(!Flag){
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("flag",1);
             startActivity(intent);
 
         }
